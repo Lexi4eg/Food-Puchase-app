@@ -206,6 +206,69 @@
   .orderbutton {
     @apply bg-blue-500 h-auto w-20 rounded-md m-3 justify-center;
   }
+
+  .Cartitems {
+    @apply text-center  mt-6 bg-green-500 
+    text-gray-600 dark:text-gray-400 
+    pt-1 pb-1
+    text-2xl shadow-lg;
+  }
+  .Cartempty {
+    @apply text-center mt-6 text-gray-600 shadow-lg text-lg dark:text-gray-400 bg-red-500;
+  }
+
+  .productname {
+    @apply text-lg flex  flex-row pt-2 pl-2;
+  }
+  .checkoutdata {
+    @apply flex flex-row justify-between mt-2 content-center;
+  }
+
+  .addandremove {
+    @apply pb-2 justify-center ml-4 pb-2;
+  }
+
+  .remove {
+    @apply w-10 h-10 bg-green-500 rounded-lg;
+  }
+  .add {
+    @apply w-10 h-10 bg-blue-500 rounded-lg;
+  }
+  .boweinzelnpreis {
+    @apply w-20 content-center pt-2;
+  }
+  .totalprice {
+    @apply flex justify-between pl-2;
+  }
+  .pircenubmer {
+    @apply pr-5 pb-2;
+  }
+
+  .checkout {
+    @apply grid justify-items-center  bg-gray-400 dark:bg-gray-600 pb-4 mt-2;
+  }
+  .checkoutbutton {
+    @apply justify-self-center text-center bg-blue-500 w-20 h-10 rounded-md;
+  }
+  .cartcontent {
+    @apply justify-center bg-gray-400 dark:bg-gray-600;
+  }
+  .totalprice {
+    @apply text-2xl pb-2;
+  }
+
+  .totalpricenumber {
+    @apply text-2xl;
+  }
+  .overflow {
+    @apply overflow-x-hidden;
+  }
+  .maincontent {
+    @apply text-gray-600 dark:text-gray-400;
+  }
+  .App {
+    @apply bg-gray-400 dark:bg-gray-600;
+  }
 }
 
 @tailwind utilities;

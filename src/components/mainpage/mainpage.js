@@ -1,5 +1,7 @@
-import emailjs from "@emailjs/browser";
 import React from "react";
+import { useRef } from "react/cjs/react.production.min";
+import emailjs from "@emailjs/browser";
+import Shoppingcard from "../Shoping card/Shoppingcard";
 
 const bowls = [
   { id: 1, bowlname: "Ganbian Huhn 🌶️", preis: "6,00€" },
@@ -17,23 +19,7 @@ const bowls = [
 function Mainpage() {
   return (
     <div className="mainpage">
-      <div className="bowlscomponent">
-        {bowls.map((data) => {
-          const { bowlname, id, preis } = data;
-          return (
-            <>
-              <div className="bowlselement">
-                <div key={id} className="Bowlname">
-                  {bowlname}
-                </div>
-
-                <h4>Preis: {preis}</h4>
-                <button className="orderbutton">Order</button>
-              </div>
-            </>
-          );
-        })}
-      </div>
+      <Shoppingcard />
     </div>
   );
 }
