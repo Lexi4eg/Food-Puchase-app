@@ -61,7 +61,8 @@
     bg-gray-300 dark:bg-gray-700 bg-opacity-90 
     dark:text-gray-300
     w-screen h-16 
-    pl-20 pr-2
+    sm:text-sm
+    pl-20 
     shadow-lg;
   }
 
@@ -192,7 +193,7 @@
     @apply bg-gray-600 text-white   font-sans text-2xl text-center;
   }
   .bowlselement {
-    @apply bg-gray-100 dark:bg-gray-800  h-auto mx-5 mt-5 rounded-xl items-center text-center;
+    @apply bg-gray-100 dark:bg-gray-800  h-auto w-auto  mx-7 mt-5 rounded-xl items-center text-center;
   }
   .bowlselement h4 {
     @apply text-gray-600 dark:text-gray-400;

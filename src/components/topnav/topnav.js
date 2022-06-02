@@ -77,6 +77,7 @@ const UserCircle = (props) => (
       src={props.url}
       alt="https://www.tenforums.com/geek/gars/images/2/types/thumb_15951118880user.png"
       className="userpicture"
+      referrerPolicy="no-referrer"
     ></img>
   </div>
 );

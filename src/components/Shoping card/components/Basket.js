@@ -1,8 +1,43 @@
-import React from "react";
+import React, { useState, useRef } from "react";
+import { send, sendForm } from "emailjs-com";
+import emailjs from "@emailjs/browser";
 
 export default function Basket(props) {
   const { cartItems, onAdd, onRemove } = props;
   const totalPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
+  console.log(cartItems);
+
+  const form = useRef();
+  var templateParams = {
+    name: "James",
+    message: `Sie haben eine ${item.name} um: ${item.price} gekauft`,
+  };
+  const Sendmail = (e) => {
+    console.log("test");
+    console.log(sendForm);
+    e.preventDefault();
+    emailjs
+      .send(
+        "Felix's Bowl purchase",
+        "template_ufoux78",
+        "Hc0262mZ0km6AAQOX",
+
+        {
+          from_name: "felix",
+          to_name: "user",
+          user_email: "felix.prattes@gmail.com",
+          message: "hi ich hoffe das funktioniert",
+        }
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
 
   return (
     <aside className="maincontent">
@@ -50,12 +85,11 @@ export default function Basket(props) {
             </div>
             <hr />
             <div className="checkout">
-              <button
-                className="checkoutbutton"
-                onClick={() => alert("Implement Checkout!")}
-              >
-                Checkout
-              </button>
+              <form ref={form} onSubmit={Sendmail}>
+                <button className="checkoutbutton" type="submit">
+                  Checkout
+                </button>
+              </form>
             </div>
           </>
         )}
