@@ -6,7 +6,7 @@ export default function Product(props) {
     <>
       <div className="bowlselement">
         <div className="Bowlname">{product.name}</div>
-        <h4>Preis: {product.preis}</h4>
+        <h4>Preis: {product.price} €</h4>
         <button className="orderbutton" onClick={() => onAdd(product)}>
           Order
         </button>

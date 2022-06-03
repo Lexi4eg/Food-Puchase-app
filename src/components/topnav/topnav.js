@@ -15,13 +15,13 @@ import "firebase/compat/firestore";
 import "firebase/compat/analytics";
 
 firebase.initializeApp({
-  apiKey: "AIzaSyBAw7IcdM3DXY0YTR-qLa9ZigCmFSCWaeM",
-  authDomain: "react-projekt-1.firebaseapp.com",
-  projectId: "react-projekt-1",
-  storageBucket: "react-projekt-1.appspot.com",
-  messagingSenderId: "403975538884",
-  appId: "1:403975538884:web:42de82ac30e1f834e4a191",
-  measurementId: "G-5L51QH5CE3",
+  apiKey: "AIzaSyCi5c9Gs9H-jtd5PU0gPCuoSnR-stVpNFU",
+  authDomain: "bowl-purchase-app.firebaseapp.com",
+  projectId: "bowl-purchase-app",
+  storageBucket: "bowl-purchase-app.appspot.com",
+  messagingSenderId: "928562948416",
+  appId: "1:928562948416:web:5ecb9c42ff823645fe72a5",
+  measurementId: "G-N4VPHWPZDP",
 });
 
 const auth = firebase.auth();
