@@ -1,17 +1,39 @@
 import React, { useState, useRef } from "react";
 import { send, sendForm } from "emailjs-com";
 import emailjs from "@emailjs/browser";
+import { useAuthState } from "react-firebase-hooks/auth";
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
+import "firebase/compat/firestore";
+import "firebase/compat/analytics";
+
+firebase.initializeApp({
+  apiKey: "AIzaSyBAw7IcdM3DXY0YTR-qLa9ZigCmFSCWaeM",
+  authDomain: "react-projekt-1.firebaseapp.com",
+  projectId: "react-projekt-1",
+  storageBucket: "react-projekt-1.appspot.com",
+  messagingSenderId: "403975538884",
+  appId: "1:403975538884:web:42de82ac30e1f834e4a191",
+  measurementId: "G-5L51QH5CE3",
+});
+const auth = firebase.auth();
 
 export default function Basket(props) {
   const { cartItems, onAdd, onRemove } = props;
+
   const totalPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
-  console.log(cartItems);
 
   const form = useRef();
   var templateParams = {
-    name: "James",
-    message: `Sie haben eine ${item.name} um: ${item.price} gekauft`,
+    name: auth.currentUser.displayName,
+    sendto: auth.currentUser.email,
+    message: `You have just bought ${cartItems.map(
+      (item) => item.qty + "." + " " + item.name
+    )} for: ${totalPrice}€ `,
   };
+
+  console.log(templateParams);
+
   const Sendmail = (e) => {
     console.log("test");
     console.log(sendForm);
@@ -20,14 +42,8 @@ export default function Basket(props) {
       .send(
         "Felix's Bowl purchase",
         "template_ufoux78",
-        "Hc0262mZ0km6AAQOX",
-
-        {
-          from_name: "felix",
-          to_name: "user",
-          user_email: "felix.prattes@gmail.com",
-          message: "hi ich hoffe das funktioniert",
-        }
+        templateParams,
+        "Hc0262mZ0km6AAQOX"
       )
       .then(
         (result) => {

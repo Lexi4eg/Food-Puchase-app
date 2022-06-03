@@ -9,7 +9,7 @@ const data = {
     { id: 7, name: "Caramel Chicken", price: 6.2 },
     { id: 8, name: "Korea Knoblauch Chicken", price: 6.5 },
     { id: 9, name: "Korea Chicken 🌶️🌶️🌶️", price: 6.5 },
-    { id: 9, name: "Lemon -Ginger Chicken mit Ananas", price: 6.5 },
+    { id: 10, name: "Lemon -Ginger Chicken mit Ananas", price: 6.5 },
   ],
 };
 
